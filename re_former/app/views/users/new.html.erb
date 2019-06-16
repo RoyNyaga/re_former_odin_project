@@ -1,0 +1,45 @@
+<!-- <form accept-charset="UTF-8" action="<%=users_path %>" method="POST">
+	<label for="username">name</label>
+	<input name="user[username]" type="text">
+	<label for="email">email</label>
+	<input name="user[email]" type="email">
+	<label for="password">password</label>
+	<input name="user[password]" type="password">
+	<input name="submit" type="submit" value="sign up">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	
+</form> -->
+
+<!-- <%#= form_tag(users_path, method: "post") do %>
+	<%#= label_tag "lname", "Name" %>
+	<%#= text_field_tag 'username' %>
+	<%#= label_tag "lpassword", "Password" %>
+	<%#= password_field_tag 'password' %>
+	<%#= label_tag "lemail", "Email" %>
+	<%#= email_field_tag "email" %>
+	<%#= submit_tag "Sign Up" %>
+<%# end %> -->
+
+
+
+<h1>Sign up</h1>
+
+
+
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :username, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+
